@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "59A7097D1C54E9B300EBA3BB"
-               BuildableName = "Span.app"
-               BlueprintName = "Span"
-               ReferencedContainer = "container:Span.xcodeproj">
+               BuildableName = "Spandan.app"
+               BlueprintName = "Spandan"
+               ReferencedContainer = "container:Spandan.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "59A709961C54E9B300EBA3BB"
-               BuildableName = "SpanTests.xctest"
-               BlueprintName = "SpanTests"
-               ReferencedContainer = "container:Span.xcodeproj">
+               BuildableName = "Spandan.xctest"
+               BlueprintName = "SpandanTests"
+               ReferencedContainer = "container:Spandan.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "59A709A11C54E9B300EBA3BB"
-               BuildableName = "SpanUITests.xctest"
-               BlueprintName = "SpanUITests"
-               ReferencedContainer = "container:Span.xcodeproj">
+               BuildableName = "Spandan.xctest"
+               BlueprintName = "SpandanUITests"
+               ReferencedContainer = "container:Spandan.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "59A7097D1C54E9B300EBA3BB"
-            BuildableName = "Span.app"
-            BlueprintName = "Span"
-            ReferencedContainer = "container:Span.xcodeproj">
+            BuildableName = "Spandan.app"
+            BlueprintName = "Spandan"
+            ReferencedContainer = "container:Spandan.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "59A7097D1C54E9B300EBA3BB"
-            BuildableName = "Span.app"
-            BlueprintName = "Span"
-            ReferencedContainer = "container:Span.xcodeproj">
+            BuildableName = "Spandan.app"
+            BlueprintName = "Spandan"
+            ReferencedContainer = "container:Spandan.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "59A7097D1C54E9B300EBA3BB"
-            BuildableName = "Span.app"
-            BlueprintName = "Span"
-            ReferencedContainer = "container:Span.xcodeproj">
+            BuildableName = "Spandan.app"
+            BlueprintName = "Spandan"
+            ReferencedContainer = "container:Spandan.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

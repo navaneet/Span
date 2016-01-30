@@ -70,6 +70,7 @@
                     <connections>
                         <outlet property="highestScoreLabel" destination="XiD-GC-gh8" id="zv9-aF-lsb"/>
                         <outlet property="lastScoreLabel" destination="mfb-5f-GzX" id="4fd-4H-nSz"/>
+                        <outlet property="startGameButton" destination="wdP-Yz-vPo" id="7Vr-YA-oia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

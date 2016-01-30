@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Span.xcodeproj">
+      location = "self:/Users/Nav/Codes/Span/Spandan.xcodeproj">
    </FileRef>
 </Workspace>

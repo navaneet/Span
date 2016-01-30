@@ -13,6 +13,7 @@
 }
 @property (weak, nonatomic) IBOutlet UILabel *lastScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *highestScoreLabel;
+@property (weak, nonatomic) IBOutlet UIButton *startGameButton;
 
 #define TOP_SCORE @"Top Score"
 #define LAST_SCORE @"Last Score"
@@ -27,6 +28,7 @@
     self.navigationController.navigationBarHidden = YES;
     self.lastScoreLabel.hidden = YES;
     self.highestScoreLabel.hidden = YES;
+    [self.startGameButton.titleLabel setFont:[UIFont fontWithName:@"Calligraffiti" size:35]];
   
     if ([[NSUserDefaults standardUserDefaults] objectForKey:TOP_SCORE] != nil) {
         NSInteger y = [[NSUserDefaults standardUserDefaults] integerForKey:LAST_SCORE];

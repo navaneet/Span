@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59569BE31C5C9B3E000D63AC /* Calligraffiti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59569BE21C5C9B3E000D63AC /* Calligraffiti.ttf */; };
+		59569BE41C5C9B3E000D63AC /* Calligraffiti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59569BE21C5C9B3E000D63AC /* Calligraffiti.ttf */; };
+		59569BE51C5C9B3E000D63AC /* Calligraffiti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59569BE21C5C9B3E000D63AC /* Calligraffiti.ttf */; };
 		597839F21C57C4DA00DFFCA7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597839F11C57C4DA00DFFCA7 /* AudioToolbox.framework */; };
 		597839F51C57C71C00DFFCA7 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 597839F41C57C71C00DFFCA7 /* UIView+Toast.m */; };
 		597839F61C57C71C00DFFCA7 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 597839F41C57C71C00DFFCA7 /* UIView+Toast.m */; };
@@ -42,12 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		59569BE21C5C9B3E000D63AC /* Calligraffiti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calligraffiti.ttf; sourceTree = "<group>"; };
 		597839F11C57C4DA00DFFCA7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		597839F31C57C71C00DFFCA7 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		597839F41C57C71C00DFFCA7 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		597839F81C57D72400DFFCA7 /* MainGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameViewController.h; sourceTree = "<group>"; };
 		597839F91C57D72400DFFCA7 /* MainGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameViewController.m; sourceTree = "<group>"; };
-		59A7097E1C54E9B300EBA3BB /* Span.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Span.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A7097E1C54E9B300EBA3BB /* Spandan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spandan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A709821C54E9B300EBA3BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59A709841C54E9B300EBA3BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59A709851C54E9B300EBA3BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -57,10 +61,10 @@
 		59A7098D1C54E9B300EBA3BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59A709901C54E9B300EBA3BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59A709921C54E9B300EBA3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59A709971C54E9B300EBA3BB /* SpanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A709971C54E9B300EBA3BB /* Spandan.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spandan.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A7099B1C54E9B300EBA3BB /* SpanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpanTests.m; sourceTree = "<group>"; };
 		59A7099D1C54E9B300EBA3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59A709A21C54E9B300EBA3BB /* SpanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A709A21C54E9B300EBA3BB /* Spandan.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spandan.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A709A61C54E9B300EBA3BB /* SpanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpanUITests.m; sourceTree = "<group>"; };
 		59A709A81C54E9B300EBA3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,9 +95,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59569BE11C5C9B26000D63AC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				59569BE21C5C9B3E000D63AC /* Calligraffiti.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		59A709751C54E9B300EBA3BB = {
 			isa = PBXGroup;
 			children = (
+				59569BE11C5C9B26000D63AC /* Fonts */,
 				597839F11C57C4DA00DFFCA7 /* AudioToolbox.framework */,
 				59A709801C54E9B300EBA3BB /* Span */,
 				59A7099A1C54E9B300EBA3BB /* SpanTests */,
@@ -105,9 +118,9 @@
 		59A7097F1C54E9B300EBA3BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				59A7097E1C54E9B300EBA3BB /* Span.app */,
-				59A709971C54E9B300EBA3BB /* SpanTests.xctest */,
-				59A709A21C54E9B300EBA3BB /* SpanUITests.xctest */,
+				59A7097E1C54E9B300EBA3BB /* Spandan.app */,
+				59A709971C54E9B300EBA3BB /* Spandan.xctest */,
+				59A709A21C54E9B300EBA3BB /* Spandan.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,9 +182,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		59A7097D1C54E9B300EBA3BB /* Span */ = {
+		59A7097D1C54E9B300EBA3BB /* Spandan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59A709AB1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "Span" */;
+			buildConfigurationList = 59A709AB1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "Spandan" */;
 			buildPhases = (
 				59A7097A1C54E9B300EBA3BB /* Sources */,
 				59A7097B1C54E9B300EBA3BB /* Frameworks */,
@@ -181,14 +194,14 @@
 			);
 			dependencies = (
 			);
-			name = Span;
+			name = Spandan;
 			productName = Span;
-			productReference = 59A7097E1C54E9B300EBA3BB /* Span.app */;
+			productReference = 59A7097E1C54E9B300EBA3BB /* Spandan.app */;
 			productType = "com.apple.product-type.application";
 		};
-		59A709961C54E9B300EBA3BB /* SpanTests */ = {
+		59A709961C54E9B300EBA3BB /* SpandanTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59A709AE1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpanTests" */;
+			buildConfigurationList = 59A709AE1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpandanTests" */;
 			buildPhases = (
 				59A709931C54E9B300EBA3BB /* Sources */,
 				59A709941C54E9B300EBA3BB /* Frameworks */,
@@ -199,14 +212,14 @@
 			dependencies = (
 				59A709991C54E9B300EBA3BB /* PBXTargetDependency */,
 			);
-			name = SpanTests;
+			name = SpandanTests;
 			productName = SpanTests;
-			productReference = 59A709971C54E9B300EBA3BB /* SpanTests.xctest */;
+			productReference = 59A709971C54E9B300EBA3BB /* Spandan.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		59A709A11C54E9B300EBA3BB /* SpanUITests */ = {
+		59A709A11C54E9B300EBA3BB /* SpandanUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59A709B11C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpanUITests" */;
+			buildConfigurationList = 59A709B11C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpandanUITests" */;
 			buildPhases = (
 				59A7099E1C54E9B300EBA3BB /* Sources */,
 				59A7099F1C54E9B300EBA3BB /* Frameworks */,
@@ -217,9 +230,9 @@
 			dependencies = (
 				59A709A41C54E9B300EBA3BB /* PBXTargetDependency */,
 			);
-			name = SpanUITests;
+			name = SpandanUITests;
 			productName = SpanUITests;
-			productReference = 59A709A21C54E9B300EBA3BB /* SpanUITests.xctest */;
+			productReference = 59A709A21C54E9B300EBA3BB /* Spandan.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -233,7 +246,6 @@
 				TargetAttributes = {
 					59A7097D1C54E9B300EBA3BB = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 68LWC8F4JF;
 					};
 					59A709961C54E9B300EBA3BB = {
 						CreatedOnToolsVersion = 7.2;
@@ -247,7 +259,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 59A709791C54E9B300EBA3BB /* Build configuration list for PBXProject "Span" */;
+			buildConfigurationList = 59A709791C54E9B300EBA3BB /* Build configuration list for PBXProject "Spandan" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -260,9 +272,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				59A7097D1C54E9B300EBA3BB /* Span */,
-				59A709961C54E9B300EBA3BB /* SpanTests */,
-				59A709A11C54E9B300EBA3BB /* SpanUITests */,
+				59A7097D1C54E9B300EBA3BB /* Spandan */,
+				59A709961C54E9B300EBA3BB /* SpandanTests */,
+				59A709A11C54E9B300EBA3BB /* SpandanUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -274,6 +286,7 @@
 			files = (
 				59A709911C54E9B300EBA3BB /* LaunchScreen.storyboard in Resources */,
 				59A7098E1C54E9B300EBA3BB /* Assets.xcassets in Resources */,
+				59569BE31C5C9B3E000D63AC /* Calligraffiti.ttf in Resources */,
 				59A7098C1C54E9B300EBA3BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59569BE41C5C9B3E000D63AC /* Calligraffiti.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59569BE51C5C9B3E000D63AC /* Calligraffiti.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,12 +347,12 @@
 /* Begin PBXTargetDependency section */
 		59A709991C54E9B300EBA3BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 59A7097D1C54E9B300EBA3BB /* Span */;
+			target = 59A7097D1C54E9B300EBA3BB /* Spandan */;
 			targetProxy = 59A709981C54E9B300EBA3BB /* PBXContainerItemProxy */;
 		};
 		59A709A41C54E9B300EBA3BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 59A7097D1C54E9B300EBA3BB /* Span */;
+			target = 59A7097D1C54E9B300EBA3BB /* Spandan */;
 			targetProxy = 59A709A31C54E9B300EBA3BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -448,13 +463,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Span/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nav.Span;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nav.Spandan;
+				PRODUCT_NAME = Spandan;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -463,13 +477,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Span/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nav.Span;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nav.Spandan;
+				PRODUCT_NAME = Spandan;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -481,8 +494,8 @@
 				INFOPLIST_FILE = SpanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.SpanTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Span.app/Span";
+				PRODUCT_NAME = Spandan;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spandan.app/Spandan";
 			};
 			name = Debug;
 		};
@@ -493,8 +506,8 @@
 				INFOPLIST_FILE = SpanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.SpanTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Span.app/Span";
+				PRODUCT_NAME = Spandan;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spandan.app/Spandan";
 			};
 			name = Release;
 		};
@@ -504,7 +517,7 @@
 				INFOPLIST_FILE = SpanUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.SpanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spandan;
 				TEST_TARGET_NAME = Span;
 				USES_XCTRUNNER = YES;
 			};
@@ -516,7 +529,7 @@
 				INFOPLIST_FILE = SpanUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.SpanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spandan;
 				TEST_TARGET_NAME = Span;
 				USES_XCTRUNNER = YES;
 			};
@@ -525,7 +538,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		59A709791C54E9B300EBA3BB /* Build configuration list for PBXProject "Span" */ = {
+		59A709791C54E9B300EBA3BB /* Build configuration list for PBXProject "Spandan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59A709A91C54E9B300EBA3BB /* Debug */,
@@ -534,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59A709AB1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "Span" */ = {
+		59A709AB1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "Spandan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59A709AC1C54E9B300EBA3BB /* Debug */,
@@ -543,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59A709AE1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpanTests" */ = {
+		59A709AE1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpandanTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59A709AF1C54E9B300EBA3BB /* Debug */,
@@ -552,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59A709B11C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpanUITests" */ = {
+		59A709B11C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpandanUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59A709B21C54E9B300EBA3BB /* Debug */,
