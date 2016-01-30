@@ -51,7 +51,7 @@
 		597839F41C57C71C00DFFCA7 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		597839F81C57D72400DFFCA7 /* MainGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameViewController.h; sourceTree = "<group>"; };
 		597839F91C57D72400DFFCA7 /* MainGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameViewController.m; sourceTree = "<group>"; };
-		59A7097E1C54E9B300EBA3BB /* Spandan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spandan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A7097E1C54E9B300EBA3BB /* SpanTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpanTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A709821C54E9B300EBA3BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59A709841C54E9B300EBA3BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59A709851C54E9B300EBA3BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,10 +61,10 @@
 		59A7098D1C54E9B300EBA3BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59A709901C54E9B300EBA3BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59A709921C54E9B300EBA3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59A709971C54E9B300EBA3BB /* Spandan.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spandan.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A709971C54E9B300EBA3BB /* SpanTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpanTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A7099B1C54E9B300EBA3BB /* SpanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpanTests.m; sourceTree = "<group>"; };
 		59A7099D1C54E9B300EBA3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59A709A21C54E9B300EBA3BB /* Spandan.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spandan.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A709A21C54E9B300EBA3BB /* SpanTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpanTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A709A61C54E9B300EBA3BB /* SpanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpanUITests.m; sourceTree = "<group>"; };
 		59A709A81C54E9B300EBA3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,9 +118,9 @@
 		59A7097F1C54E9B300EBA3BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				59A7097E1C54E9B300EBA3BB /* Spandan.app */,
-				59A709971C54E9B300EBA3BB /* Spandan.xctest */,
-				59A709A21C54E9B300EBA3BB /* Spandan.xctest */,
+				59A7097E1C54E9B300EBA3BB /* SpanTest.app */,
+				59A709971C54E9B300EBA3BB /* SpanTest.xctest */,
+				59A709A21C54E9B300EBA3BB /* SpanTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,9 +182,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		59A7097D1C54E9B300EBA3BB /* Spandan */ = {
+		59A7097D1C54E9B300EBA3BB /* SpanTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59A709AB1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "Spandan" */;
+			buildConfigurationList = 59A709AB1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpanTest" */;
 			buildPhases = (
 				59A7097A1C54E9B300EBA3BB /* Sources */,
 				59A7097B1C54E9B300EBA3BB /* Frameworks */,
@@ -194,14 +194,14 @@
 			);
 			dependencies = (
 			);
-			name = Spandan;
+			name = SpanTest;
 			productName = Span;
-			productReference = 59A7097E1C54E9B300EBA3BB /* Spandan.app */;
+			productReference = 59A7097E1C54E9B300EBA3BB /* SpanTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		59A709961C54E9B300EBA3BB /* SpandanTests */ = {
+		59A709961C54E9B300EBA3BB /* SpanTestTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59A709AE1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpandanTests" */;
+			buildConfigurationList = 59A709AE1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpanTestTests" */;
 			buildPhases = (
 				59A709931C54E9B300EBA3BB /* Sources */,
 				59A709941C54E9B300EBA3BB /* Frameworks */,
@@ -212,14 +212,14 @@
 			dependencies = (
 				59A709991C54E9B300EBA3BB /* PBXTargetDependency */,
 			);
-			name = SpandanTests;
+			name = SpanTestTests;
 			productName = SpanTests;
-			productReference = 59A709971C54E9B300EBA3BB /* Spandan.xctest */;
+			productReference = 59A709971C54E9B300EBA3BB /* SpanTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		59A709A11C54E9B300EBA3BB /* SpandanUITests */ = {
+		59A709A11C54E9B300EBA3BB /* SpanTestUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59A709B11C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpandanUITests" */;
+			buildConfigurationList = 59A709B11C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpanTestUITests" */;
 			buildPhases = (
 				59A7099E1C54E9B300EBA3BB /* Sources */,
 				59A7099F1C54E9B300EBA3BB /* Frameworks */,
@@ -230,9 +230,9 @@
 			dependencies = (
 				59A709A41C54E9B300EBA3BB /* PBXTargetDependency */,
 			);
-			name = SpandanUITests;
+			name = SpanTestUITests;
 			productName = SpanUITests;
-			productReference = 59A709A21C54E9B300EBA3BB /* Spandan.xctest */;
+			productReference = 59A709A21C54E9B300EBA3BB /* SpanTest.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -259,7 +259,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 59A709791C54E9B300EBA3BB /* Build configuration list for PBXProject "Spandan" */;
+			buildConfigurationList = 59A709791C54E9B300EBA3BB /* Build configuration list for PBXProject "SpanTest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -272,9 +272,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				59A7097D1C54E9B300EBA3BB /* Spandan */,
-				59A709961C54E9B300EBA3BB /* SpandanTests */,
-				59A709A11C54E9B300EBA3BB /* SpandanUITests */,
+				59A7097D1C54E9B300EBA3BB /* SpanTest */,
+				59A709961C54E9B300EBA3BB /* SpanTestTests */,
+				59A709A11C54E9B300EBA3BB /* SpanTestUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -347,12 +347,12 @@
 /* Begin PBXTargetDependency section */
 		59A709991C54E9B300EBA3BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 59A7097D1C54E9B300EBA3BB /* Spandan */;
+			target = 59A7097D1C54E9B300EBA3BB /* SpanTest */;
 			targetProxy = 59A709981C54E9B300EBA3BB /* PBXContainerItemProxy */;
 		};
 		59A709A41C54E9B300EBA3BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 59A7097D1C54E9B300EBA3BB /* Spandan */;
+			target = 59A7097D1C54E9B300EBA3BB /* SpanTest */;
 			targetProxy = 59A709A31C54E9B300EBA3BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -468,7 +468,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.Spandan;
-				PRODUCT_NAME = Spandan;
+				PRODUCT_NAME = SpanTest;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -482,7 +482,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.Spandan;
-				PRODUCT_NAME = Spandan;
+				PRODUCT_NAME = SpanTest;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -494,8 +494,8 @@
 				INFOPLIST_FILE = SpanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.SpanTests;
-				PRODUCT_NAME = Spandan;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spandan.app/Spandan";
+				PRODUCT_NAME = SpanTest;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpanTest.app/SpanTest";
 			};
 			name = Debug;
 		};
@@ -506,8 +506,8 @@
 				INFOPLIST_FILE = SpanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.SpanTests;
-				PRODUCT_NAME = Spandan;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spandan.app/Spandan";
+				PRODUCT_NAME = SpanTest;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpanTest.app/SpanTest";
 			};
 			name = Release;
 		};
@@ -517,7 +517,7 @@
 				INFOPLIST_FILE = SpanUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.SpanUITests;
-				PRODUCT_NAME = Spandan;
+				PRODUCT_NAME = SpanTest;
 				TEST_TARGET_NAME = Span;
 				USES_XCTRUNNER = YES;
 			};
@@ -529,7 +529,7 @@
 				INFOPLIST_FILE = SpanUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.SpanUITests;
-				PRODUCT_NAME = Spandan;
+				PRODUCT_NAME = SpanTest;
 				TEST_TARGET_NAME = Span;
 				USES_XCTRUNNER = YES;
 			};
@@ -538,7 +538,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		59A709791C54E9B300EBA3BB /* Build configuration list for PBXProject "Spandan" */ = {
+		59A709791C54E9B300EBA3BB /* Build configuration list for PBXProject "SpanTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59A709A91C54E9B300EBA3BB /* Debug */,
@@ -547,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59A709AB1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "Spandan" */ = {
+		59A709AB1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpanTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59A709AC1C54E9B300EBA3BB /* Debug */,
@@ -556,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59A709AE1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpandanTests" */ = {
+		59A709AE1C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpanTestTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59A709AF1C54E9B300EBA3BB /* Debug */,
@@ -565,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59A709B11C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpandanUITests" */ = {
+		59A709B11C54E9B300EBA3BB /* Build configuration list for PBXNativeTarget "SpanTestUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59A709B21C54E9B300EBA3BB /* Debug */,

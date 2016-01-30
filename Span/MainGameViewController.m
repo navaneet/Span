@@ -154,9 +154,9 @@
                 }
                 //NSString *randomString = [NSString stringWithFormat:@"%i",random];
                 [resultsArray addObject:[NSNumber numberWithInt:i+1]];
-                __weak UIView *view = [dictionary objectForKey:[[NSNumber alloc]initWithInt:random]];
+                UIView *view = [dictionary objectForKey:[[NSNumber alloc]initWithInt:random]];
                 //            NSLog(@"%@ >>>>>> %i",view, random);
-                UIButton *__weak button = [UIButton buttonWithType:UIButtonTypeCustom];
+                UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
                 button.frame = view.bounds;
                 button.tag = i+1;
                 [button addTarget:self action:@selector(BtnClick:) forControlEvents:UIControlEventTouchUpInside];
