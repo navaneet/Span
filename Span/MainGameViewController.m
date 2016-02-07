@@ -146,7 +146,6 @@
             };
             
             NSMutableArray *temp = [self shuffle:[[dictionary allKeys] mutableCopy]];
-            temp = [self shuffle:temp];
             for (int i=0; i<initialDifficulty/*[dictionary count]*/; i++) {
                 int random;
                 if (initialDifficulty>[dictionary count]) {

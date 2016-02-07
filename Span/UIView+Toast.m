@@ -202,7 +202,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         wrapperView.layer.shadowOffset = style.shadowOffset;
     }
     
-    wrapperView.backgroundColor = style.backgroundColor;
+    wrapperView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.3];//style.backgroundColor;//[UIColor colorWithRed:0.953 green:0.314 blue:0.341 alpha:1.00];
     
     if(image != nil) {
         imageView = [[UIImageView alloc] initWithImage:image];
@@ -414,16 +414,16 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         self.messageColor = [UIColor whiteColor];
         self.maxWidthPercentage = 0.8;
         self.maxHeightPercentage = 0.8;
-        self.horizontalPadding = 10.0;
-        self.verticalPadding = 10.0;
+        self.horizontalPadding = 11.0;
+        self.verticalPadding = 13.0;
         self.cornerRadius = 10.0;
         self.titleFont = [UIFont boldSystemFontOfSize:16.0];
-        self.messageFont = [UIFont systemFontOfSize:16.0];
+        self.messageFont = [UIFont systemFontOfSize:17];
         self.titleAlignment = NSTextAlignmentLeft;
         self.messageAlignment = NSTextAlignmentLeft;
         self.titleNumberOfLines = 0;
         self.messageNumberOfLines = 0;
-        self.displayShadow = YES;
+        self.displayShadow = NO;
         self.shadowOpacity = 0.6;
         self.shadowRadius = 6.0;
         self.shadowOffset = CGSizeMake(4.0, 4.0);
