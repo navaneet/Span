@@ -388,7 +388,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     
     if([point isKindOfClass:[NSString class]]) {
         if([point caseInsensitiveCompare:CSToastPositionTop] == NSOrderedSame) {
-            return CGPointMake(self.bounds.size.width/2, (toast.frame.size.height / 2) + style.verticalPadding);
+            return CGPointMake(self.bounds.size.width/2, (toast.frame.size.height / 2) + style.verticalPadding+24);
         } else if([point caseInsensitiveCompare:CSToastPositionCenter] == NSOrderedSame) {
             return CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
         }
@@ -423,8 +423,8 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         self.messageAlignment = NSTextAlignmentLeft;
         self.titleNumberOfLines = 0;
         self.messageNumberOfLines = 0;
-        self.displayShadow = NO;
-        self.shadowOpacity = 0.8;
+        self.displayShadow = YES;
+        self.shadowOpacity = 0.6;
         self.shadowRadius = 6.0;
         self.shadowOffset = CGSizeMake(4.0, 4.0);
         self.imageSize = CGSizeMake(80.0, 80.0);

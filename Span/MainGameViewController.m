@@ -16,6 +16,7 @@
 #define HEIGHT_OF_CELL 70
 #define INITIAL_DIFFICULTY 3
 #define RETRIES 3
+#define SEPARATION_FROM_TOP 100
 
 @interface MainGameViewController (){
     __block BOOL layout;
@@ -92,6 +93,7 @@
             resultsArray = [[NSMutableArray alloc]init];
             int width = self.view.bounds.size.width;
             int height = self.view.bounds.size.height;
+            height = height - SEPARATION_FROM_TOP;
             //actual width after clearing separation width
             width = width - SEPARATION*(width/WIDTH_OF_CELL);
             height = height - SEPARATION*(height/HEIGHT_OF_CELL);

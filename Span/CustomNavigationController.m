@@ -24,26 +24,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-//
-//-(BOOL)shouldAutorotate {
-//    
-//    return NO;
-//}
+
+-(BOOL)shouldAutorotate {
+    
+    return NO;
+}
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations {
+  
+ return UIInterfaceOrientationMaskPortrait;
 
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    {
-        return UIInterfaceOrientationMaskLandscapeRight;
-        
-        // The device is an iPad running iOS 3.2 or later.
-    }
-    else
-    {
-        return UIInterfaceOrientationMaskPortrait;
-        
-        // The device is an iPhone or iPod touch.
-    }
 }
 
 @end
