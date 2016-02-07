@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="7VE-2Y-cXV">
             <objects>
-                <navigationController id="8Ti-vU-mZb" sceneMemberID="viewController">
+                <navigationController id="8Ti-vU-mZb" customClass="CustomNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xSb-xw-xgh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -42,14 +42,14 @@
                                     <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bCV-nh-bEg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfb-5f-GzX">
-                                <rect key="frame" x="9" y="28" width="73" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfb-5f-GzX">
+                                <rect key="frame" x="10" y="28" width="73" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiD-GC-gh8">
-                                <rect key="frame" x="521.5" y="28" width="69.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiD-GC-gh8">
+                                <rect key="frame" x="520.5" y="28" width="69.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -58,9 +58,9 @@
                         <color key="backgroundColor" red="0.078431372549019607" green="0.15686274509803921" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wdP-Yz-vPo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4bA-Bm-m2T"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="mfb-5f-GzX" secondAttribute="leading" constant="11" id="E8R-24-gB4"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="mfb-5f-GzX" secondAttribute="leading" constant="10" id="E8R-24-gB4"/>
                             <constraint firstItem="mfb-5f-GzX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="FLD-NP-C2u"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XiD-GC-gh8" secondAttribute="trailing" constant="-11" id="JkL-Pb-8bL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XiD-GC-gh8" secondAttribute="trailing" constant="-10" id="JkL-Pb-8bL"/>
                             <constraint firstItem="wdP-Yz-vPo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="T6B-SF-x7S"/>
                             <constraint firstItem="XiD-GC-gh8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ct7-97-2Il"/>
                         </constraints>

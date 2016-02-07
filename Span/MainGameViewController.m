@@ -44,32 +44,31 @@
     //[UIColor colorWithRed:0.239 green:0.298 blue:0.325 alpha:1.00];
     parentView = [[UIView alloc]initWithFrame:self.view.bounds];
     scoreTextView = [[UITextView alloc] init];
-    NSString *scoreText = [NSString stringWithFormat:@"Score: %i                   ",score];
-    scoreTextView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    NSString *scoreText = [NSString stringWithFormat:@"Score: %i",score];
+    scoreTextView.translatesAutoresizingMaskIntoConstraints = NO;
+    scoreTextView.scrollEnabled = NO;
     scoreTextView.text = scoreText;
     scoreTextView.textColor = [UIColor whiteColor];
     scoreTextView.font = [UIFont systemFontOfSize:15];
     scoreTextView.backgroundColor = [UIColor clearColor];
-    [scoreTextView sizeToFit];
     [self.view addSubview:scoreTextView];
+    
     movesLeftTextView = [[UITextView alloc] init];
-    NSString *movesLeftText = [NSString stringWithFormat:@"Calculating Sequence... "];
+    NSString *movesLeftText = [NSString stringWithFormat:@"Calculating Sequence..."];
     movesLeftTextView.text = movesLeftText;
     movesLeftTextView.textColor = [UIColor whiteColor];
     movesLeftTextView.font = [UIFont systemFontOfSize:15];
     movesLeftTextView.backgroundColor = [UIColor clearColor];
-    [movesLeftTextView sizeToFit];
-    movesLeftTextView.textAlignment = NSTextAlignmentRight;
-    CGRect frame = movesLeftTextView.bounds;
-    //align on top right
-    CGFloat xPosition = CGRectGetWidth(self.view.bounds) - CGRectGetWidth(frame);
-    frame.origin = CGPointMake(ceil(xPosition), 0.0);
-    movesLeftTextView.frame = frame;
+    movesLeftTextView.translatesAutoresizingMaskIntoConstraints = NO;
     movesLeftTextView.scrollEnabled = NO;
-    //autoresizing so it stays at top right (flexible left and flexible bottom margin)
-    movesLeftTextView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin| UIViewAutoresizingFlexibleBottomMargin;
     [self.view addSubview:movesLeftTextView];
+    
     [self.view addSubview:parentView];
+    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:movesLeftTextView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:-3];
+    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:scoreTextView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:3];
+    [self.view addConstraint:rightConstraint];
+    [self.view addConstraint:leftConstraint];
+
 }
 
 -(void) startGame {
@@ -91,8 +90,8 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.8* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             dictionary = [[NSMutableDictionary alloc]init];
             resultsArray = [[NSMutableArray alloc]init];
-            int width = self.view.frame.size.width;
-            int height = self.view.frame.size.height;
+            int width = self.view.bounds.size.width;
+            int height = self.view.bounds.size.height;
             //actual width after clearing separation width
             width = width - SEPARATION*(width/WIDTH_OF_CELL);
             height = height - SEPARATION*(height/HEIGHT_OF_CELL);
@@ -102,13 +101,13 @@
             CGRect frame = CGRectMake(0, 0, WIDTH_OF_CELL, HEIGHT_OF_CELL);
             for (int j =0; j<height/HEIGHT_OF_CELL; j++) {
                 if (j==0) {
-                    frame = CGRectMake(0, ((self.view.frame.size.height-(HEIGHT_OF_CELL+SEPARATION)*(height/HEIGHT_OF_CELL))/2)+SEPARATION/2, WIDTH_OF_CELL, HEIGHT_OF_CELL);
+                    frame = CGRectMake(0, ((self.view.bounds.size.height-(HEIGHT_OF_CELL+SEPARATION)*(height/HEIGHT_OF_CELL))/2)+SEPARATION/2, WIDTH_OF_CELL, HEIGHT_OF_CELL);
                 } else {
                     frame = CGRectMake(0, frame.origin.y+SEPARATION+HEIGHT_OF_CELL, WIDTH_OF_CELL, HEIGHT_OF_CELL);
                 }
                 for (int i =0; i<width/WIDTH_OF_CELL; i++) {
                     if (i==0) {
-                        frame = CGRectMake(((self.view.frame.size.width-(WIDTH_OF_CELL+SEPARATION)*(width/WIDTH_OF_CELL))/2)+SEPARATION/2, frame.origin.y, WIDTH_OF_CELL, HEIGHT_OF_CELL);
+                        frame = CGRectMake(((self.view.bounds.size.width-(WIDTH_OF_CELL+SEPARATION)*(width/WIDTH_OF_CELL))/2)+SEPARATION/2, frame.origin.y, WIDTH_OF_CELL, HEIGHT_OF_CELL);
                     }else{
                         //NSLog(@"XXXX %d %d", j,i);
                         frame = CGRectMake(frame.origin.x+WIDTH_OF_CELL+SEPARATION, frame.origin.y, WIDTH_OF_CELL, HEIGHT_OF_CELL);
@@ -145,6 +144,7 @@
             };
             
             NSMutableArray *temp = [self shuffle:[[dictionary allKeys] mutableCopy]];
+            temp = [self shuffle:temp];
             for (int i=0; i<initialDifficulty/*[dictionary count]*/; i++) {
                 int random;
                 if (initialDifficulty>[dictionary count]) {
@@ -346,10 +346,10 @@
 }
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    layout = YES;
-    [self.view setNeedsLayout];
-    [self.view layoutIfNeeded];
-    [self startGame];
+//    layout = YES;
+//    [self.view setNeedsLayout];
+//    [self.view layoutIfNeeded];
+//    [self startGame];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

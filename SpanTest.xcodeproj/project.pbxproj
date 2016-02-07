@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591B54DE1C67811D00121130 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B54DD1C67811D00121130 /* CustomNavigationController.m */; };
 		59569BE31C5C9B3E000D63AC /* Calligraffiti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59569BE21C5C9B3E000D63AC /* Calligraffiti.ttf */; };
 		59569BE41C5C9B3E000D63AC /* Calligraffiti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59569BE21C5C9B3E000D63AC /* Calligraffiti.ttf */; };
 		59569BE51C5C9B3E000D63AC /* Calligraffiti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59569BE21C5C9B3E000D63AC /* Calligraffiti.ttf */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		591B54DC1C67811D00121130 /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
+		591B54DD1C67811D00121130 /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
 		59569BE21C5C9B3E000D63AC /* Calligraffiti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calligraffiti.ttf; sourceTree = "<group>"; };
 		597839F11C57C4DA00DFFCA7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		597839F31C57C71C00DFFCA7 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 			children = (
 				59A709841C54E9B300EBA3BB /* AppDelegate.h */,
 				59A709851C54E9B300EBA3BB /* AppDelegate.m */,
+				591B54DC1C67811D00121130 /* CustomNavigationController.h */,
+				591B54DD1C67811D00121130 /* CustomNavigationController.m */,
 				59A709871C54E9B300EBA3BB /* ViewController.h */,
 				59A709881C54E9B300EBA3BB /* ViewController.m */,
 				59A7098A1C54E9B300EBA3BB /* Main.storyboard */,
@@ -318,6 +323,7 @@
 				59A709891C54E9B300EBA3BB /* ViewController.m in Sources */,
 				59A709861C54E9B300EBA3BB /* AppDelegate.m in Sources */,
 				597839FA1C57D72400DFFCA7 /* MainGameViewController.m in Sources */,
+				591B54DE1C67811D00121130 /* CustomNavigationController.m in Sources */,
 				59A709831C54E9B300EBA3BB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,13 +469,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Span/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.Spandan;
 				PRODUCT_NAME = SpanTest;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -477,13 +484,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Span/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nav.Spandan;
 				PRODUCT_NAME = SpanTest;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
