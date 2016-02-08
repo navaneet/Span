@@ -244,7 +244,7 @@
                 
                 
                 [animationBlocks addObject:^(BOOL finished){
-                    [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                    [UIView animateWithDuration:0.9 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
                         view.alpha = 1.0;
                         view.transform =CGAffineTransformMakeScale(1.2,1.2);
                         UIColor *color = [UIColor colorWithRed:0.329 green:0.749 blue:0.710 alpha:1.00];//[UIColor colorWithRed:0.302 green:0.702 blue:0.702 alpha:1.00];
@@ -252,7 +252,7 @@
                         button.alpha = 1.0;
                         
                     } completion:^(BOOL finished) {
-                        [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                        [UIView animateWithDuration:0.9 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
                             view.transform =CGAffineTransformMakeScale(1,1);
                             //view.backgroundColor = [UIColor whiteColor];
                             button.alpha = 0.0;
