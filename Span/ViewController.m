@@ -17,6 +17,10 @@
 
 #define TOP_SCORE @"Top Score"
 #define LAST_SCORE @"Last Score"
+#define ios7BlueColor [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]
+#define IS_IPAD (( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) ? YES : NO)
+#define IS_IPHONE_5 (([UIScreen mainScreen].scale == 2.f && [UIScreen mainScreen].bounds.size.height == 568)?YES:NO)
+#define IS_RETINA_DISPLAY_DEVICE (([UIScreen mainScreen].scale == 2.f)?YES:NO)
 
 @end
 
@@ -28,7 +32,6 @@
     self.navigationController.navigationBarHidden = YES;
     self.lastScoreLabel.hidden = YES;
     self.highestScoreLabel.hidden = YES;
-    [self.startGameButton.titleLabel setFont:[UIFont fontWithName:@"Calligraffiti" size:35]];
   
     if ([[NSUserDefaults standardUserDefaults] objectForKey:TOP_SCORE] != nil) {
         NSInteger y = [[NSUserDefaults standardUserDefaults] integerForKey:LAST_SCORE];
@@ -37,6 +40,33 @@
         NSInteger x = [[NSUserDefaults standardUserDefaults] integerForKey:TOP_SCORE];
         self.highestScoreLabel.text = [NSString stringWithFormat:@"Top Score: %i", (int)x];
         self.highestScoreLabel.hidden = NO;
+    }
+    
+    [self.startGameButton setTintColor:ios7BlueColor];
+    if (IS_IPAD)
+    {
+        [self.lastScoreLabel setFont:[UIFont systemFontOfSize:20]];
+        [self.highestScoreLabel setFont:[UIFont systemFontOfSize:20]];
+        [self.startGameButton.titleLabel setFont:[UIFont fontWithName:@"Calligraffiti" size:75]];
+        //do stuff for iPad
+    }
+    else
+    {
+        if(IS_IPHONE_5)
+        {
+            [self.lastScoreLabel setFont:[UIFont systemFontOfSize:16]];
+            [self.highestScoreLabel setFont:[UIFont systemFontOfSize:16]];
+            [self.startGameButton.titleLabel setFont:[UIFont fontWithName:@"Calligraffiti" size:43]];
+            //do stuff for 4 inch iPhone screen
+        }
+        else
+        {
+            [self.lastScoreLabel setFont:[UIFont systemFontOfSize:15]];
+            [self.highestScoreLabel setFont:[UIFont systemFontOfSize:15]];
+            [self.startGameButton.titleLabel setFont:[UIFont fontWithName:@"Calligraffiti" size:42]];
+            //do stuff for 3.5 inch iPhone screen
+        }
+        
     }
     
     [self showBackgroundAnimation];

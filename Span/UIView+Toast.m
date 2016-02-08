@@ -27,6 +27,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
 
+#define IS_IPAD (( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) ? YES : NO)
+#define IS_IPHONE_5 (([UIScreen mainScreen].scale == 2.f && [UIScreen mainScreen].bounds.size.height == 568)?YES:NO)
+#define IS_RETINA_DISPLAY_DEVICE (([UIScreen mainScreen].scale == 2.f)?YES:NO)
+
 NSString * CSToastPositionTop       = @"CSToastPositionTop";
 NSString * CSToastPositionCenter    = @"CSToastPositionCenter";
 NSString * CSToastPositionBottom    = @"CSToastPositionBottom";
@@ -418,7 +422,26 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         self.verticalPadding = 13.0;
         self.cornerRadius = 10.0;
         self.titleFont = [UIFont boldSystemFontOfSize:16.0];
-        self.messageFont = [UIFont systemFontOfSize:17];
+        if (IS_IPAD)
+        {
+             self.messageFont = [UIFont systemFontOfSize:25];
+            //do stuff for iPad
+        }
+        else
+        {
+            if(IS_IPHONE_5)
+            {
+                self.messageFont = [UIFont systemFontOfSize:18];
+                //do stuff for 4 inch iPhone screen
+            }
+            else
+            {
+                self.messageFont = [UIFont systemFontOfSize:15];
+                //do stuff for 3.5 inch iPhone screen
+            }
+            
+        }
+//        self.messageFont = [UIFont systemFontOfSize:17];
         self.titleAlignment = NSTextAlignmentLeft;
         self.messageAlignment = NSTextAlignmentLeft;
         self.titleNumberOfLines = 0;

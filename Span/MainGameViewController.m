@@ -11,9 +11,11 @@
 #import "UIView+Toast.h"
 #import "ViewController.h"
 
+#define IS_IPAD (( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) ? YES : NO)
+#define IS_IPHONE_5 (([UIScreen mainScreen].scale == 2.f && [UIScreen mainScreen].bounds.size.height == 568)?YES:NO)
+#define IS_RETINA_DISPLAY_DEVICE (([UIScreen mainScreen].scale == 2.f)?YES:NO)
+
 #define SEPARATION 20
-#define WIDTH_OF_CELL 70
-#define HEIGHT_OF_CELL 70
 #define INITIAL_DIFFICULTY 3
 #define RETRIES 3
 #define SEPARATION_FROM_TOP 100
@@ -29,11 +31,11 @@
     UITextView *scoreTextView;
     __block int movesLeft;
     UITextView *movesLeftTextView;
+    int widthOfCell;
+    int heightOfCell;
 }
 
 @end
-
-#define ios7BlueColor [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
 
 @implementation MainGameViewController
 
@@ -50,7 +52,6 @@
     scoreTextView.scrollEnabled = NO;
     scoreTextView.text = scoreText;
     scoreTextView.textColor = [UIColor whiteColor];
-    scoreTextView.font = [UIFont systemFontOfSize:15];
     scoreTextView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:scoreTextView];
     
@@ -58,7 +59,6 @@
     NSString *movesLeftText = [NSString stringWithFormat:@"Calculating Sequence..."];
     movesLeftTextView.text = movesLeftText;
     movesLeftTextView.textColor = [UIColor whiteColor];
-    movesLeftTextView.font = [UIFont systemFontOfSize:15];
     movesLeftTextView.backgroundColor = [UIColor clearColor];
     movesLeftTextView.translatesAutoresizingMaskIntoConstraints = NO;
     movesLeftTextView.scrollEnabled = NO;
@@ -69,6 +69,32 @@
     NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:scoreTextView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:3];
     [self.view addConstraint:rightConstraint];
     [self.view addConstraint:leftConstraint];
+    
+    if (IS_IPAD)
+    {
+        [movesLeftTextView setFont:[UIFont systemFontOfSize:20]];
+        [scoreTextView setFont:[UIFont systemFontOfSize:20]];
+        //do stuff for iPad
+    }
+    else
+    {
+        if(IS_IPHONE_5)
+        {
+            [movesLeftTextView setFont:[UIFont systemFontOfSize:16]];
+            [scoreTextView setFont:[UIFont systemFontOfSize:16]];
+            //do stuff for 4 inch iPhone screen
+        }
+        else
+        {
+            [movesLeftTextView setFont:[UIFont systemFontOfSize:15]];
+            [scoreTextView setFont:[UIFont systemFontOfSize:15]];
+            //do stuff for 3.5 inch iPhone screen
+        }
+        
+    }
+    
+    [movesLeftTextView setNeedsLayout];
+    [scoreTextView setNeedsLayout];
 
 }
 
@@ -94,25 +120,46 @@
             int width = self.view.bounds.size.width;
             int height = self.view.bounds.size.height;
             height = height - SEPARATION_FROM_TOP;
+            
+            if (IS_IPAD)
+            {
+                heightOfCell = widthOfCell = 100;
+                //do stuff for iPad
+            }
+            else
+            {
+                if(IS_IPHONE_5)
+                {
+                    heightOfCell = widthOfCell = 70;
+                    //do stuff for 4 inch iPhone screen
+                }
+                else
+                {
+                    heightOfCell = widthOfCell = 58;
+                    //do stuff for 3.5 inch iPhone screen
+                }
+                
+            }
+            
             //actual width after clearing separation width
-            width = width - SEPARATION*(width/WIDTH_OF_CELL);
-            height = height - SEPARATION*(height/HEIGHT_OF_CELL);
+            width = width - SEPARATION*(width/widthOfCell);
+            height = height - SEPARATION*(height/heightOfCell);
             
             int number=0;
             UIView *view;
-            CGRect frame = CGRectMake(0, 0, WIDTH_OF_CELL, HEIGHT_OF_CELL);
-            for (int j =0; j<height/HEIGHT_OF_CELL; j++) {
+            CGRect frame = CGRectMake(0, 0, widthOfCell, heightOfCell);
+            for (int j =0; j<height/heightOfCell; j++) {
                 if (j==0) {
-                    frame = CGRectMake(0, ((self.view.bounds.size.height-(HEIGHT_OF_CELL+SEPARATION)*(height/HEIGHT_OF_CELL))/2)+SEPARATION/2, WIDTH_OF_CELL, HEIGHT_OF_CELL);
+                    frame = CGRectMake(0, ((self.view.bounds.size.height-(heightOfCell+SEPARATION)*(height/heightOfCell))/2)+SEPARATION/2, widthOfCell, heightOfCell);
                 } else {
-                    frame = CGRectMake(0, frame.origin.y+SEPARATION+HEIGHT_OF_CELL, WIDTH_OF_CELL, HEIGHT_OF_CELL);
+                    frame = CGRectMake(0, frame.origin.y+SEPARATION+heightOfCell, widthOfCell, heightOfCell);
                 }
-                for (int i =0; i<width/WIDTH_OF_CELL; i++) {
+                for (int i =0; i<width/widthOfCell; i++) {
                     if (i==0) {
-                        frame = CGRectMake(((self.view.bounds.size.width-(WIDTH_OF_CELL+SEPARATION)*(width/WIDTH_OF_CELL))/2)+SEPARATION/2, frame.origin.y, WIDTH_OF_CELL, HEIGHT_OF_CELL);
+                        frame = CGRectMake(((self.view.bounds.size.width-(widthOfCell+SEPARATION)*(width/widthOfCell))/2)+SEPARATION/2, frame.origin.y, widthOfCell, heightOfCell);
                     }else{
                         //NSLog(@"XXXX %d %d", j,i);
-                        frame = CGRectMake(frame.origin.x+WIDTH_OF_CELL+SEPARATION, frame.origin.y, WIDTH_OF_CELL, HEIGHT_OF_CELL);
+                        frame = CGRectMake(frame.origin.x+widthOfCell+SEPARATION, frame.origin.y, widthOfCell, heightOfCell);
                     }
                     //NSLog(@"%i", number);
                     view = [[UIView alloc]initWithFrame:frame];
@@ -146,6 +193,8 @@
             };
             
             NSMutableArray *temp = [self shuffle:[[dictionary allKeys] mutableCopy]];
+            temp = [self shuffle:temp];
+            temp = [self shuffle:temp];
             for (int i=0; i<initialDifficulty/*[dictionary count]*/; i++) {
                 int random;
                 if (initialDifficulty>[dictionary count]) {
@@ -166,14 +215,32 @@
                 [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 button.titleLabel.textAlignment = NSTextAlignmentCenter;
                 [button setTitle:[[NSNumber numberWithInt:i+1] stringValue] forState:UIControlStateNormal];
-                [button.titleLabel setFont:[UIFont boldSystemFontOfSize:25.0f]];
+                if (IS_IPAD)
+                {
+                    [button.titleLabel setFont:[UIFont boldSystemFontOfSize:37]];
+                    //do stuff for iPad
+                }
+                else
+                {
+                    if(IS_IPHONE_5)
+                    {
+                        [button.titleLabel setFont:[UIFont boldSystemFontOfSize:27]];
+                        //do stuff for 4 inch iPhone screen
+                    }
+                    else
+                    {
+                        [button.titleLabel setFont:[UIFont boldSystemFontOfSize:23]];
+                        //do stuff for 3.5 inch iPhone screen
+                    }
+                    
+                }
                 button.alpha = 0.0;
                 view.backgroundColor = [UIColor whiteColor];
                 [view addSubview:button];
                 
                 
                 [animationBlocks addObject:^(BOOL finished){
-                    [UIView animateWithDuration:1.2 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                    [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
                         view.alpha = 1.0;
                         view.transform =CGAffineTransformMakeScale(1.2,1.2);
                         UIColor *color = [UIColor colorWithRed:0.329 green:0.749 blue:0.710 alpha:1.00];//[UIColor colorWithRed:0.302 green:0.702 blue:0.702 alpha:1.00];
@@ -181,7 +248,7 @@
                         button.alpha = 1.0;
                         
                     } completion:^(BOOL finished) {
-                        [UIView animateWithDuration:1.2 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                        [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
                             view.transform =CGAffineTransformMakeScale(1,1);
                             //view.backgroundColor = [UIColor whiteColor];
                             button.alpha = 0.0;
@@ -206,7 +273,7 @@
                 NSString *movesLeftText = [NSString stringWithFormat:@"Moves Left: %i",movesLeft];
                 movesLeftTextView.text = movesLeftText;
                 [self.view makeToast:@"Tap The Sequence"
-                            duration:1.0
+                            duration:0.8
                             position:CSToastPositionTop];
             }];
             // execute the first block in the queue
@@ -270,7 +337,7 @@
             NSLog(@"Game Lost");
             initialDifficulty = INITIAL_DIFFICULTY;
             [self.delegate lastScore:score];//XXXXXXXX
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.8* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.2* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                 [self.navigationController popViewControllerAnimated:YES];
             });
         }else {
@@ -319,7 +386,7 @@
             scoreTextView.text = scoreText;
             retries = RETRIES;
             layout = NO;
-            [self.view makeToast:@"Sequence Completed" duration:1.0 position:CSToastPositionTop title:nil image:nil style:nil completion:^(BOOL didTap) {
+            [self.view makeToast:@"Sequence Completed" duration:0.8 position:CSToastPositionTop title:nil image:nil style:nil completion:^(BOOL didTap) {
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                     NSString *movesLeftText = [NSString stringWithFormat:@"Calculating Sequence... "];
                     movesLeftTextView.text = movesLeftText;
