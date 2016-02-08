@@ -32,13 +32,14 @@
     self.navigationController.navigationBarHidden = YES;
     self.lastScoreLabel.hidden = YES;
     self.highestScoreLabel.hidden = YES;
+    [self.startGameButton setTitle:NSLocalizedString(@"Start Game",nil) forState:UIControlStateNormal];
   
     if ([[NSUserDefaults standardUserDefaults] objectForKey:TOP_SCORE] != nil) {
         NSInteger y = [[NSUserDefaults standardUserDefaults] integerForKey:LAST_SCORE];
-        self.lastScoreLabel.text = [NSString stringWithFormat:@"Last Score: %i", (int)y];
+        self.lastScoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Last Score: %i",nil), (int)y];
         self.lastScoreLabel.hidden = NO;
         NSInteger x = [[NSUserDefaults standardUserDefaults] integerForKey:TOP_SCORE];
-        self.highestScoreLabel.text = [NSString stringWithFormat:@"Top Score: %i", (int)x];
+        self.highestScoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Top Score: %i",nil), (int)x];
         self.highestScoreLabel.hidden = NO;
     }
     
@@ -77,7 +78,7 @@
     [[NSUserDefaults standardUserDefaults]setInteger:score forKey:LAST_SCORE];
     [[NSUserDefaults standardUserDefaults] synchronize];
     NSInteger y = [[NSUserDefaults standardUserDefaults] integerForKey:LAST_SCORE];
-    self.lastScoreLabel.text = [NSString stringWithFormat:@"Last Score: %i", (int)y];
+    self.lastScoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Last Score: %i",nil), (int)y];
     self.lastScoreLabel.hidden = NO;
     if ([[NSUserDefaults standardUserDefaults] objectForKey:TOP_SCORE] != nil) {
         NSInteger x = [[NSUserDefaults standardUserDefaults] integerForKey:TOP_SCORE];
@@ -91,7 +92,7 @@
     }
     
     NSInteger x = [[NSUserDefaults standardUserDefaults] integerForKey:TOP_SCORE];
-    self.highestScoreLabel.text = [NSString stringWithFormat:@"Top Score: %i", (int)x];
+    self.highestScoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Top Score: %i",nil), (int)x];
     self.highestScoreLabel.hidden = NO;
 }
 

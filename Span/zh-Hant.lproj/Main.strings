@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Top Score"; ObjectID = "XiD-GC-gh8"; */
+"XiD-GC-gh8.text" = "Top Score";
+
+/* Class = "UILabel"; text = "Last Score"; ObjectID = "mfb-5f-GzX"; */
+"mfb-5f-GzX.text" = "Last Score";
+
+/* Class = "UIButton"; normalTitle = "Start Game"; ObjectID = "wdP-Yz-vPo"; */
+"wdP-Yz-vPo.normalTitle" = "Start Game";

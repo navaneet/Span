@@ -47,7 +47,7 @@
     //[UIColor colorWithRed:0.239 green:0.298 blue:0.325 alpha:1.00];
     parentView = [[UIView alloc]initWithFrame:self.view.bounds];
     scoreTextView = [[UITextView alloc] init];
-    NSString *scoreText = [NSString stringWithFormat:@"Score: %i",score];
+    NSString *scoreText = [NSString stringWithFormat:NSLocalizedString(@"Score: %i",nil),score];
     scoreTextView.translatesAutoresizingMaskIntoConstraints = NO;
     scoreTextView.scrollEnabled = NO;
     scoreTextView.text = scoreText;
@@ -56,7 +56,7 @@
     [self.view addSubview:scoreTextView];
     
     movesLeftTextView = [[UITextView alloc] init];
-    NSString *movesLeftText = [NSString stringWithFormat:@"Calculating Sequence..."];
+    NSString *movesLeftText = NSLocalizedString([NSString stringWithFormat:@"Calculating Sequence..."],nil);
     movesLeftTextView.text = movesLeftText;
     movesLeftTextView.textColor = [UIColor whiteColor];
     movesLeftTextView.backgroundColor = [UIColor clearColor];
@@ -270,9 +270,9 @@
                 processInputs = YES;
                 layout = NO;
                 movesLeft = initialDifficulty;
-                NSString *movesLeftText = [NSString stringWithFormat:@"Moves Left: %i",movesLeft];
+                NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Moves Left: %i",nil),movesLeft];
                 movesLeftTextView.text = movesLeftText;
-                [self.view makeToast:@"Tap The Sequence"
+                [self.view makeToast:NSLocalizedString(@"Tap The Sequence",nil)
                             duration:0.8
                             position:CSToastPositionTop];
             }];
@@ -331,7 +331,7 @@
         if (retries==0) {
             processInputs = NO;
             retries = RETRIES;
-            [self.view makeToast:@"Game Lost"
+            [self.view makeToast:NSLocalizedString(@"Game Lost",nil)
                         duration:0.5
                         position:CSToastPositionTop];
             NSLog(@"Game Lost");
@@ -341,7 +341,7 @@
                 [self.navigationController popViewControllerAnimated:YES];
             });
         }else {
-            [self.view makeToast:[NSString stringWithFormat:@"Retries Left: %i",retries]
+            [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"Retries Left: %i",nil),retries]
                         duration:0.5
                         position:CSToastPositionTop];
             NSLog(@"Retry");
@@ -371,7 +371,7 @@
                                               }];
                          }];
         movesLeft--;
-        NSString *movesLeftText = [NSString stringWithFormat:@"Moves Left: %i",movesLeft];
+        NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Moves Left: %i",nil),movesLeft];
         movesLeftTextView.text = movesLeftText;
         [resultsArray removeObject:[resultsArray firstObject]];
         if (subviewViewCount > 1) {
@@ -382,13 +382,13 @@
             processInputs = NO;
             initialDifficulty++;
             score++;
-            NSString *scoreText = [NSString stringWithFormat:@"Score: %i",score];
+            NSString *scoreText = [NSString stringWithFormat:NSLocalizedString(@"Score: %i",nil),score];
             scoreTextView.text = scoreText;
             retries = RETRIES;
             layout = NO;
-            [self.view makeToast:@"Sequence Completed" duration:0.8 position:CSToastPositionTop title:nil image:nil style:nil completion:^(BOOL didTap) {
+            [self.view makeToast:NSLocalizedString(@"Sequence Completed",nil) duration:0.8 position:CSToastPositionTop title:nil image:nil style:nil completion:^(BOOL didTap) {
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                    NSString *movesLeftText = [NSString stringWithFormat:@"Calculating Sequence... "];
+                    NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Calculating Sequence...",nil)];
                     movesLeftTextView.text = movesLeftText;
                     layout = YES;
                     [self.view setNeedsLayout];
