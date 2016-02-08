@@ -58,6 +58,10 @@
     movesLeftTextView = [[UITextView alloc] init];
     NSString *movesLeftText = NSLocalizedString([NSString stringWithFormat:@"Calculating Sequence..."],nil);
     movesLeftTextView.text = movesLeftText;
+//    movesLeftTextView.alpha = 0;
+//    [UIView animateWithDuration:0.9 delay:0 options:UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse animations:^{
+//        movesLeftTextView.alpha = 1;
+//    } completion:nil];
     movesLeftTextView.textColor = [UIColor whiteColor];
     movesLeftTextView.backgroundColor = [UIColor clearColor];
     movesLeftTextView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -102,9 +106,9 @@
     if (layout) {
         //NSLog(@"%@",[NSThread callStackSymbols]);
         for (UIView *temp in parentView.subviews) {
-            [UIView animateWithDuration:0.5
+            [UIView animateWithDuration:0.55
                                   delay:0.1
-                                options: UIViewAnimationOptionCurveEaseOut
+                                options: UIViewAnimationOptionCurveEaseInOut
                              animations:^{
                                  temp.alpha = 0;
                              }completion:^(BOOL finished){
@@ -114,7 +118,7 @@
             
         }
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.8* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.9* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             dictionary = [[NSMutableDictionary alloc]init];
             resultsArray = [[NSMutableArray alloc]init];
             int width = self.view.bounds.size.width;
@@ -270,11 +274,20 @@
                 processInputs = YES;
                 layout = NO;
                 movesLeft = initialDifficulty;
-                NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Moves Left: %i",nil),movesLeft];
-                movesLeftTextView.text = movesLeftText;
-                [self.view makeToast:NSLocalizedString(@"Tap The Sequence",nil)
-                            duration:0.9
-                            position:CSToastPositionTop];
+//                NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Moves Left: %i",nil),movesLeft];
+//                movesLeftTextView.text = movesLeftText;
+                [movesLeftTextView.layer removeAllAnimations];
+                NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Retries Left: %i",nil),RETRIES];
+                [UIView animateWithDuration:0.3 animations:^{
+                    movesLeftTextView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    movesLeftTextView.text = movesLeftText;
+                    movesLeftTextView.alpha = 1;
+                    [self.view makeToast:NSLocalizedString(@"Tap The Sequence",nil)
+                                duration:0.8
+                                position:CSToastPositionTop];
+                }];
+                
             }];
             // execute the first block in the queue
             getNextAnimation()(YES);
@@ -331,9 +344,16 @@
         if (retries==0) {
             processInputs = NO;
             retries = RETRIES;
-            [self.view makeToast:NSLocalizedString(@"Game Lost",nil)
-                        duration:0.5
-                        position:CSToastPositionTop];
+            NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Retries Left: %i",nil),0];
+            [UIView animateWithDuration:0.5 animations:^{
+                movesLeftTextView.alpha = 0;
+            } completion:^(BOOL finished) {
+                movesLeftTextView.text = movesLeftText;
+                movesLeftTextView.alpha = 1;
+                [self.view makeToast:NSLocalizedString(@"Game Lost",nil)
+                            duration:0.9
+                            position:CSToastPositionTop];
+            }];
             NSLog(@"Game Lost");
             initialDifficulty = INITIAL_DIFFICULTY;
             [self.delegate lastScore:score];//XXXXXXXX
@@ -341,14 +361,22 @@
                 [self.navigationController popViewControllerAnimated:YES];
             });
         }else {
-            [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"Retries Left: %i",nil),retries]
-                        duration:0.5
-                        position:CSToastPositionTop];
+//            [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"Retries Left: %i",nil),retries]
+//                        duration:0.5
+//                        position:CSToastPositionTop];
+            NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Retries Left: %i",nil),retries];
+           [UIView animateWithDuration:0.5 animations:^{
+               movesLeftTextView.alpha = 0;
+           } completion:^(BOOL finished) {
+               movesLeftTextView.text = movesLeftText;
+               movesLeftTextView.alpha = 1;
+           }];
+            
             NSLog(@"Retry");
         }
     }else {
         //zoom effect
-        [UIView animateWithDuration: 0.5
+        [UIView animateWithDuration: 0.3
                               delay: 0
              usingSpringWithDamping: 1
               initialSpringVelocity: .8
@@ -371,8 +399,8 @@
                                               }];
                          }];
         movesLeft--;
-        NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Moves Left: %i",nil),movesLeft];
-        movesLeftTextView.text = movesLeftText;
+//        NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Moves Left: %i",nil),movesLeft];
+//        movesLeftTextView.text = movesLeftText;
         [resultsArray removeObject:[resultsArray firstObject]];
         if (subviewViewCount > 1) {
             [button removeFromSuperview];
@@ -386,8 +414,8 @@
             scoreTextView.text = scoreText;
             retries = RETRIES;
             layout = NO;
-            [self.view makeToast:NSLocalizedString(@"Sequence Completed",nil) duration:0.9 position:CSToastPositionTop title:nil image:nil style:nil completion:^(BOOL didTap) {
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [self.view makeToast:NSLocalizedString(@"Sequence Completed",nil) duration:0.8 position:CSToastPositionTop title:nil image:nil style:nil completion:^(BOOL didTap) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.2* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                     NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Calculating Sequence...",nil)];
                     movesLeftTextView.text = movesLeftText;
                     layout = YES;
