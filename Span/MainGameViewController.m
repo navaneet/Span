@@ -273,7 +273,7 @@
                 NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Moves Left: %i",nil),movesLeft];
                 movesLeftTextView.text = movesLeftText;
                 [self.view makeToast:NSLocalizedString(@"Tap The Sequence",nil)
-                            duration:0.8
+                            duration:0.9
                             position:CSToastPositionTop];
             }];
             // execute the first block in the queue
@@ -386,7 +386,7 @@
             scoreTextView.text = scoreText;
             retries = RETRIES;
             layout = NO;
-            [self.view makeToast:NSLocalizedString(@"Sequence Completed",nil) duration:0.8 position:CSToastPositionTop title:nil image:nil style:nil completion:^(BOOL didTap) {
+            [self.view makeToast:NSLocalizedString(@"Sequence Completed",nil) duration:0.9 position:CSToastPositionTop title:nil image:nil style:nil completion:^(BOOL didTap) {
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                     NSString *movesLeftText = [NSString stringWithFormat:NSLocalizedString(@"Calculating Sequence...",nil)];
                     movesLeftTextView.text = movesLeftText;
