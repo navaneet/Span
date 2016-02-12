@@ -214,6 +214,7 @@
                 }else{
                     random = (int)[(NSNumber *)[temp objectAtIndex:i] integerValue];
                 }
+                
                 //NSString *randomString = [NSString stringWithFormat:@"%i",random];
                 [resultsArray addObject:[NSNumber numberWithInt:i+1]];
                 UIView *view = [dictionary objectForKey:[[NSNumber alloc]initWithInt:random]];
@@ -384,6 +385,7 @@
         }
     }else {
         //zoom effect
+        UIView *superview = button.superview;
         [UIView animateWithDuration: 0.3
                               delay: 0
              usingSpringWithDamping: 1
@@ -391,7 +393,7 @@
                             options: 0
                          animations: ^
          {
-             button.superview.transform =CGAffineTransformMakeScale(1.2,1.2);
+             superview.transform =CGAffineTransformMakeScale(1.2,1.2);
          }
                          completion: ^(BOOL finished) {
                              [UIView animateWithDuration: 0.5
@@ -401,7 +403,7 @@
                                                  options: 0
                                               animations: ^
                               {
-                                  button.superview.transform =CGAffineTransformMakeScale(1,1);
+                                  superview.transform =CGAffineTransformMakeScale(1,1);
                               }
                                               completion: ^(BOOL finished) {
                                               }];
