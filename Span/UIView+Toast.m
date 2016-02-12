@@ -392,7 +392,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     
     if([point isKindOfClass:[NSString class]]) {
         if([point caseInsensitiveCompare:CSToastPositionTop] == NSOrderedSame) {
-            return CGPointMake(self.bounds.size.width/2, (toast.frame.size.height / 2) + style.verticalPadding+24);
+            return CGPointMake(self.bounds.size.width/2, (toast.frame.size.height / 2) + style.verticalPadding+23);
         } else if([point caseInsensitiveCompare:CSToastPositionCenter] == NSOrderedSame) {
             return CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
         }
@@ -436,7 +436,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
             }
             else
             {
-                self.messageFont = [UIFont systemFontOfSize:15];
+                self.messageFont = [UIFont systemFontOfSize:16];
                 //do stuff for 3.5 inch iPhone screen
             }
             

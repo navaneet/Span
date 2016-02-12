@@ -71,8 +71,12 @@
     [self.view addSubview:parentView];
     NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:movesLeftTextView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:-3];
     NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:scoreTextView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:3];
+    NSLayoutConstraint *movesTopConstraint = [NSLayoutConstraint constraintWithItem:movesLeftTextView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:1];
+    NSLayoutConstraint *scoreTopConstraint = [NSLayoutConstraint constraintWithItem:scoreTextView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:1];
     [self.view addConstraint:rightConstraint];
     [self.view addConstraint:leftConstraint];
+    [self.view addConstraint:movesTopConstraint];
+    [self.view addConstraint:scoreTopConstraint];
     
     if (IS_IPAD)
     {
