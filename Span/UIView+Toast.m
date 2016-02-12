@@ -303,7 +303,9 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     
     wrapperView.layer.borderColor = [[UIColor colorWithRed:0.329 green:0.749 blue:0.710 alpha:1.00] CGColor];;
     wrapperView.layer.borderWidth = 1;
+    if ([wrapperView.layer respondsToSelector:@selector(setAllowsEdgeAntialiasing:)]) {
     wrapperView.layer.allowsEdgeAntialiasing = YES;
+    }
     wrapperView.layer.masksToBounds = YES;
     
     return wrapperView;

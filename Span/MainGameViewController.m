@@ -177,7 +177,10 @@
                     view.layer.borderWidth = 0.5;
                     view.backgroundColor = [UIColor whiteColor];
                     view.alpha = 0.0;
-                    view.layer.allowsEdgeAntialiasing = YES;
+                    if ([view.layer respondsToSelector:@selector(setAllowsEdgeAntialiasing:)]) {
+                        view.layer.allowsEdgeAntialiasing = YES;
+                    }
+                    view.layer.masksToBounds = YES;
                     [parentView addSubview:view];
                     [dictionary setObject:view forKey:[[NSNumber alloc]initWithInt:number]];
                     number++;
