@@ -394,10 +394,30 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
 
 - (CGPoint)cs_centerPointForPosition:(id)point withToast:(UIView *)toast {
     CSToastStyle *style = [CSToastManager sharedStyle];
+    int vertical_spacing;
+    if (IS_IPAD)
+    {
+        vertical_spacing = 11.8;
+        //do stuff for iPad
+    }
+    else
+    {
+        if(IS_IPHONE_5)
+        {
+            vertical_spacing = 32;
+            //do stuff for 4 inch iPhone screen
+        }
+        else
+        {
+            vertical_spacing = 24.85;
+            //do stuff for 3.5 inch iPhone screen
+        }
+        
+    }
     
     if([point isKindOfClass:[NSString class]]) {
         if([point caseInsensitiveCompare:CSToastPositionTop] == NSOrderedSame) {
-            return CGPointMake(self.bounds.size.width/2, (toast.frame.size.height / 2) + style.verticalPadding+24);
+            return CGPointMake(self.bounds.size.width/2, (toast.frame.size.height / 2) + style.verticalPadding+vertical_spacing);
         } else if([point caseInsensitiveCompare:CSToastPositionCenter] == NSOrderedSame) {
             return CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
         }
