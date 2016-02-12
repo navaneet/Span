@@ -301,6 +301,11 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         [wrapperView addSubview:imageView];
     }
     
+    wrapperView.layer.borderColor = [[UIColor colorWithRed:0.329 green:0.749 blue:0.710 alpha:1.00] CGColor];;
+    wrapperView.layer.borderWidth = 1;
+    wrapperView.layer.allowsEdgeAntialiasing = YES;
+    wrapperView.layer.masksToBounds = YES;
+    
     return wrapperView;
 }
 
@@ -392,7 +397,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     
     if([point isKindOfClass:[NSString class]]) {
         if([point caseInsensitiveCompare:CSToastPositionTop] == NSOrderedSame) {
-            return CGPointMake(self.bounds.size.width/2, (toast.frame.size.height / 2) + style.verticalPadding+25);
+            return CGPointMake(self.bounds.size.width/2, (toast.frame.size.height / 2) + style.verticalPadding+24);
         } else if([point caseInsensitiveCompare:CSToastPositionCenter] == NSOrderedSame) {
             return CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
         }
