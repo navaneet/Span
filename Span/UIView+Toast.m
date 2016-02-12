@@ -406,7 +406,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     {
         if(IS_IPHONE_5)
         {
-            vertical_spacing = 32;
+            vertical_spacing = 32.5;
             //do stuff for 4 inch iPhone screen
         }
         else
