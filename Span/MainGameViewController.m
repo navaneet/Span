@@ -386,6 +386,7 @@
     }else {
         //zoom effect
         UIView *superview = button.superview;
+        [self.view layoutIfNeeded];
         [UIView animateWithDuration: 0.3
                               delay: 0
              usingSpringWithDamping: 1
@@ -406,6 +407,7 @@
                                   superview.transform =CGAffineTransformMakeScale(1,1);
                               }
                                               completion: ^(BOOL finished) {
+                                                  [self.view layoutIfNeeded];
                                               }];
                          }];
         movesLeft--;
