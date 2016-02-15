@@ -207,6 +207,12 @@
             NSMutableArray *temp = [self shuffle:[[dictionary allKeys] mutableCopy]];
             temp = [self shuffle:temp];
             temp = [self shuffle:temp];
+//            temp = [NSMutableArray new];
+//            [temp addObject:[NSNumber numberWithInt:0]];
+//            [temp addObject:[NSNumber numberWithInt:1]];
+//            [temp addObject:[NSNumber numberWithInt:5]];
+
+            
             for (int i=0; i<initialDifficulty/*[dictionary count]*/; i++) {
                 int random;
                 if (initialDifficulty>[dictionary count]) {
