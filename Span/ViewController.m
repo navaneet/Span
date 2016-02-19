@@ -57,14 +57,14 @@
         {
             [self.lastScoreLabel setFont:[UIFont systemFontOfSize:16]];
             [self.highestScoreLabel setFont:[UIFont systemFontOfSize:16]];
-            [self.startGameButton.titleLabel setFont:[UIFont fontWithName:@"Calligraffiti" size:43]];
+            [self.startGameButton.titleLabel setFont:[UIFont fontWithName:@"Calligraffiti" size:39]];
             //do stuff for 4 inch iPhone screen
         }
         else
         {
             [self.lastScoreLabel setFont:[UIFont systemFontOfSize:15]];
             [self.highestScoreLabel setFont:[UIFont systemFontOfSize:15]];
-            [self.startGameButton.titleLabel setFont:[UIFont fontWithName:@"Calligraffiti" size:42]];
+            [self.startGameButton.titleLabel setFont:[UIFont fontWithName:@"Calligraffiti" size:38]];
             //do stuff for 3.5 inch iPhone screen
         }
         

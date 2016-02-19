@@ -208,9 +208,9 @@
             temp = [self shuffle:temp];
             temp = [self shuffle:temp];
 //            temp = [NSMutableArray new];
-//            [temp addObject:[NSNumber numberWithInt:0]];
-//            [temp addObject:[NSNumber numberWithInt:1]];
-//            [temp addObject:[NSNumber numberWithInt:5]];
+//            [temp addObject:[NSNumber numberWithInt:18]];//0 1 6
+//            [temp addObject:[NSNumber numberWithInt:19]];//7 8 15
+//            [temp addObject:[NSNumber numberWithInt:28]];//18 19 28
 
             
             for (int i=0; i<initialDifficulty/*[dictionary count]*/; i++) {
