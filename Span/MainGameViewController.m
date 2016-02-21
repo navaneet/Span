@@ -403,7 +403,7 @@
              superview.transform =CGAffineTransformMakeScale(1.2,1.2);
          }
                          completion: ^(BOOL finished) {
-                             [UIView animateWithDuration: 0.5
+                             [UIView animateWithDuration: 0.4
                                                    delay: 0
                                   usingSpringWithDamping: 1
                                    initialSpringVelocity: .8
