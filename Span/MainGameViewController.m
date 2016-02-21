@@ -173,8 +173,9 @@
                     view = [[UIView alloc]initWithFrame:frame];
                     view.tag = number;
                     view.layer.cornerRadius = view.frame.size.width/2;
-                    view.layer.borderColor = [[UIColor colorWithRed:0.329 green:0.749 blue:0.710 alpha:1.00] CGColor];//[[UIColor grayColor] CGColor];
-                    view.layer.borderWidth = 0.2;
+                    //view.layer.borderColor = [[UIColor colorWithRed:0.329 green:0.749 blue:0.710 alpha:1.00] CGColor];//[[UIColor grayColor] CGColor];
+                    //view.layer.borderWidth = 0.1;
+                    view.layer.contentsScale = [[UIScreen mainScreen] scale];
                     view.backgroundColor = [UIColor whiteColor];
                     view.alpha = 0.0;
                     if ([view.layer respondsToSelector:@selector(setAllowsEdgeAntialiasing:)]) {
@@ -410,7 +411,7 @@
                                                  options: 0
                                               animations: ^
                               {
-                                  superview.transform =CGAffineTransformMakeScale(1,1);
+                                  superview.transform = CGAffineTransformIdentity;//CGAffineTransformMakeScale(1,1);
                               }
                                               completion: ^(BOOL finished) {
                                                   [self.view layoutIfNeeded];
