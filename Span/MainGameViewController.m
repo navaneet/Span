@@ -173,14 +173,14 @@
                     view = [[UIView alloc]initWithFrame:frame];
                     view.tag = number;
                     view.layer.cornerRadius = view.frame.size.width/2;
-                    view.layer.borderColor = [[UIColor grayColor] CGColor];
-                    view.layer.borderWidth = 0.5;
+                    view.layer.borderColor = [[UIColor colorWithRed:0.329 green:0.749 blue:0.710 alpha:1.00] CGColor];//[[UIColor grayColor] CGColor];
+                    view.layer.borderWidth = 0.2;
                     view.backgroundColor = [UIColor whiteColor];
                     view.alpha = 0.0;
                     if ([view.layer respondsToSelector:@selector(setAllowsEdgeAntialiasing:)]) {
                         view.layer.allowsEdgeAntialiasing = YES;
                     }
-                    view.layer.masksToBounds = YES;
+                    //view.layer.masksToBounds = YES;
                     [parentView addSubview:view];
                     [dictionary setObject:view forKey:[[NSNumber alloc]initWithInt:number]];
                     number++;
@@ -403,7 +403,7 @@
              superview.transform =CGAffineTransformMakeScale(1.2,1.2);
          }
                          completion: ^(BOOL finished) {
-                             [UIView animateWithDuration: 0.4
+                             [UIView animateWithDuration: 0.5
                                                    delay: 0
                                   usingSpringWithDamping: 1
                                    initialSpringVelocity: .8
